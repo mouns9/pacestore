@@ -79,7 +79,7 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="#"
+            href="/guide"
             className="flex items-center gap-2 border border-white/20 hover:border-[#FF5C00] text-white/60 hover:text-[#FF5C00] font-bold text-sm uppercase tracking-[0.2em] px-10 py-4 transition-all duration-300"
           >
             Guide de sélection

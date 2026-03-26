@@ -1,4 +1,6 @@
+'use client';
 import Image from "next/image";
+import { useCart } from "@/contexts/CartContext";
 
 type ProductSpec = {
   drop?: string;
@@ -36,17 +38,21 @@ const CATEGORY_COLORS: Record<string, string> = {
   GPS:         "bg-blue-500/10 text-blue-400 border-blue-500/20",
 };
 
-const CATEGORY_ICONS: Record<string, string> = {
-  Trail:       "TR",
-  Compétition: "RD",
-  GPS:         "GPS",
-};
-
 export default function ProductCard({ product }: Props) {
+  const { add } = useCart();
   const categoryClass =
     CATEGORY_COLORS[product.category] ?? "bg-white/5 text-white/50 border-white/10";
 
   const specEntries = Object.entries(product.specs).slice(0, 3);
+
+  const handleAdd = () => {
+    add({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+  };
 
   return (
     <article className="group relative bg-[#111111] border border-white/5 overflow-hidden flex flex-col transition-all duration-500 hover:border-[#FF5C00]/50 hover:scale-[1.02] hover:shadow-[0_24px_60px_rgba(255,92,0,0.12)]">
@@ -123,7 +129,11 @@ export default function ProductCard({ product }: Props) {
           <span className="text-2xl font-black text-white">
             {product.price.toLocaleString("fr-FR")} €
           </span>
-          <button className="bg-[#FF5C00] hover:bg-white hover:text-[#0A0A0A] active:scale-95 transition-all duration-300 text-white text-xs font-black uppercase tracking-[0.15em] px-5 py-2.5">
+          <button
+            onClick={handleAdd}
+            disabled={!product.inStock}
+            className="bg-[#FF5C00] hover:bg-white hover:text-[#0A0A0A] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 text-white text-xs font-black uppercase tracking-[0.15em] px-5 py-2.5"
+          >
             Ajouter
           </button>
         </div>
