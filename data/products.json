@@ -13,7 +13,7 @@
       "poids": "298 g (H42)",
       "terrain": "Trail technique, rocky"
     },
-    "image": "/images/hoka-speedgoat-5.jpg",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
     "colors": ["Noir/Orange", "Blanc/Bleu", "Vert forêt"],
     "sizes": [40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 46],
     "inStock": true
@@ -32,7 +32,7 @@
       "poids": "198 g (H42)",
       "terrain": "Route, piste"
     },
-    "image": "/images/nike-vaporfly-3.jpg",
+    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800",
     "colors": ["Blanc/Volt", "Noir/Rose", "Bleu Racing"],
     "sizes": [40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 46, 47],
     "inStock": true
@@ -51,7 +51,7 @@
       "gps": "Multi-bandes L1/L5",
       "capteurs": "Cardio optique, SpO2, altimètre baro"
     },
-    "image": "/images/garmin-forerunner-965.jpg",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
     "colors": ["Noir/Titanium", "Blanc/Or Rose"],
     "sizes": ["Taille unique"],
     "inStock": true
@@ -70,7 +70,7 @@
       "poids": "279 g (H42)",
       "terrain": "Route, trottoir"
     },
-    "image": "/images/on-cloudmonster-2.jpg",
+    "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=800",
     "colors": ["Noir/Eclipse", "Blanc/Glacier", "Indigo/Cobalt"],
     "sizes": [40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 46, 47],
     "inStock": true

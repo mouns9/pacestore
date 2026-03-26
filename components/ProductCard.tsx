@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ProductSpec = {
   drop?: string;
   stack?: string;
@@ -52,13 +54,17 @@ export default function ProductCard({ product }: Props) {
       {/* Image area */}
       <div className="relative aspect-[4/3] bg-[#0D0D0D] overflow-hidden">
 
-        {/* Category watermark */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white/[0.04] font-black uppercase select-none"
-                style={{ fontSize: "clamp(60px, 8vw, 90px)", letterSpacing: "-0.04em" }}>
-            {CATEGORY_ICONS[product.category] ?? product.category}
-          </span>
-        </div>
+        {/* Product image */}
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+
+        {/* Dark overlay for contrast */}
+        <div className="absolute inset-0 bg-[#0A0A0A]/40" />
 
         {/* Orange hover wash */}
         <div className="absolute inset-0 bg-[#FF5C00]/0 group-hover:bg-[#FF5C00]/5 transition-colors duration-500" />
