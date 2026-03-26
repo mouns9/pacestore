@@ -1,0 +1,78 @@
+[
+  {
+    "id": "hoka-speedgoat-5",
+    "name": "HOKA Speedgoat 5",
+    "category": "Trail",
+    "price": 165,
+    "currency": "EUR",
+    "badge": "Bestseller Trail",
+    "description": "La référence absolue du trail technique. Semelle Vibram Megagrip redéfinie, amorti maximaliste CMEVA et upper mesh ventilé pour les longues distances en montagne. Drop 4 mm, stack 37/33 mm.",
+    "specs": {
+      "drop": "4 mm",
+      "stack": "37 / 33 mm",
+      "poids": "298 g (H42)",
+      "terrain": "Trail technique, rocky"
+    },
+    "image": "/images/hoka-speedgoat-5.jpg",
+    "colors": ["Noir/Orange", "Blanc/Bleu", "Vert forêt"],
+    "sizes": [40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 46],
+    "inStock": true
+  },
+  {
+    "id": "nike-vaporfly-3",
+    "name": "Nike Vaporfly 3",
+    "category": "Compétition",
+    "price": 275,
+    "currency": "EUR",
+    "badge": "Record Personnel",
+    "description": "Conçue pour briser les chronos. Plaque carbone ZoomX intégrée, mousse ZoomX ultra-réactive à 85% de restitution d'énergie. La chaussure des marathoniens sub-3h. Drop 8 mm, construction légèreà 198 g.",
+    "specs": {
+      "drop": "8 mm",
+      "stack": "40 / 32 mm",
+      "poids": "198 g (H42)",
+      "terrain": "Route, piste"
+    },
+    "image": "/images/nike-vaporfly-3.jpg",
+    "colors": ["Blanc/Volt", "Noir/Rose", "Bleu Racing"],
+    "sizes": [40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 46, 47],
+    "inStock": true
+  },
+  {
+    "id": "garmin-forerunner-965",
+    "name": "Garmin Forerunner 965",
+    "category": "GPS",
+    "price": 599,
+    "currency": "EUR",
+    "badge": "Pro Choice",
+    "description": "La montre GPS ultime pour les coureurs d'élite. Écran AMOLED 1.4\", suivi Training Readiness, HRV Status, cartographie multibandes. Autonomie 31h GPS. Compatible Stryd, Garmin Running Dynamics Pod.",
+    "specs": {
+      "autonomie": "31 h GPS / 23 j montre",
+      "ecran": "AMOLED 1.4\" 454×454 px",
+      "gps": "Multi-bandes L1/L5",
+      "capteurs": "Cardio optique, SpO2, altimètre baro"
+    },
+    "image": "/images/garmin-forerunner-965.jpg",
+    "colors": ["Noir/Titanium", "Blanc/Or Rose"],
+    "sizes": ["Taille unique"],
+    "inStock": true
+  },
+  {
+    "id": "on-cloudmonster-2",
+    "name": "On Running Cloudmonster 2",
+    "category": "Route",
+    "price": 189,
+    "currency": "EUR",
+    "badge": "Daily Trainer",
+    "description": "La bête du quotidien. Amorti CloudTec Phase XXL revu pour une transition talon-avant-pied fluide et une restitution d'énergie maximale. Idéale pour les sorties longues sur bitume, du footing récup au tempo soutenu. Drop 6 mm, stack 38/32 mm.",
+    "specs": {
+      "drop": "6 mm",
+      "stack": "38 / 32 mm",
+      "poids": "279 g (H42)",
+      "terrain": "Route, trottoir"
+    },
+    "image": "/images/on-cloudmonster-2.jpg",
+    "colors": ["Noir/Eclipse", "Blanc/Glacier", "Indigo/Cobalt"],
+    "sizes": [40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 46, 47],
+    "inStock": true
+  }
+]
