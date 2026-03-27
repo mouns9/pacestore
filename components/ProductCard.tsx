@@ -132,7 +132,7 @@ export default function ProductCard({ product }: Props) {
           <button
             onClick={handleAdd}
             disabled={!product.inStock}
-            className="bg-[#FF5C00] hover:bg-white hover:text-[#0A0A0A] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 text-white text-xs font-black uppercase tracking-[0.15em] px-5 py-2.5"
+            className="bg-[#FF5C00] hover:bg-white hover:text-[#0A0A0A] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 text-white text-xs font-black uppercase tracking-[0.15em] px-5 py-3 min-h-[44px]"
           >
             Ajouter
           </button>
