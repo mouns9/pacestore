@@ -35,7 +35,7 @@ export default function CartSidebar() {
           </div>
           <button
             onClick={close}
-            className="text-white/30 hover:text-white transition-colors p-1.5 hover:bg-white/5"
+            className="text-white/30 hover:text-white transition-colors p-3 -mr-2 hover:bg-white/5 min-w-[44px] min-h-[44px] flex items-center justify-center"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" d="M18 6L6 18M6 6l12 12" />
@@ -70,7 +70,7 @@ export default function CartSidebar() {
               </div>
               <button
                 onClick={close}
-                className="text-[#FF5C00] text-xs font-black uppercase tracking-widest border border-[#FF5C00]/30 px-5 py-2.5 hover:bg-[#FF5C00] hover:text-white transition-all duration-200"
+                className="text-[#FF5C00] text-xs font-black uppercase tracking-widest border border-[#FF5C00]/30 px-5 py-3.5 min-h-[44px] hover:bg-[#FF5C00] hover:text-white transition-all duration-200"
               >
                 Voir le catalogue
               </button>
@@ -105,17 +105,17 @@ export default function CartSidebar() {
                     <div className="flex items-center border border-white/10">
                       <button
                         onClick={() => updateQty(item.id, item.quantity - 1)}
-                        className="w-7 h-7 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/5 transition-colors text-base leading-none"
+                        className="w-11 h-11 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/5 transition-colors text-base leading-none"
                         aria-label="Diminuer la quantité"
                       >
                         −
                       </button>
-                      <span className="w-8 h-7 flex items-center justify-center text-white text-xs font-bold border-x border-white/10">
+                      <span className="w-10 h-11 flex items-center justify-center text-white text-xs font-bold border-x border-white/10">
                         {item.quantity}
                       </span>
                       <button
                         onClick={() => updateQty(item.id, item.quantity + 1)}
-                        className="w-7 h-7 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/5 transition-colors text-base leading-none"
+                        className="w-11 h-11 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/5 transition-colors text-base leading-none"
                         aria-label="Augmenter la quantité"
                       >
                         +
@@ -124,7 +124,7 @@ export default function CartSidebar() {
 
                     <button
                       onClick={() => remove(item.id)}
-                      className="text-white/20 hover:text-red-400 transition-colors text-[10px] uppercase tracking-wider font-bold"
+                      className="min-h-[44px] px-2 flex items-center text-white/20 hover:text-red-400 transition-colors text-[10px] uppercase tracking-wider font-bold"
                     >
                       Supprimer
                     </button>
@@ -137,7 +137,7 @@ export default function CartSidebar() {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="border-t border-white/5 px-6 py-5 flex-shrink-0 space-y-3">
+          <div className="border-t border-white/5 px-6 pt-5 pb-5 flex-shrink-0 space-y-3" style={{ paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}>
             {/* Shipping */}
             <div className="flex justify-between text-xs">
               <span className="text-white/30 uppercase tracking-wider">Livraison</span>
@@ -175,7 +175,7 @@ export default function CartSidebar() {
             <Link
               href="/checkout"
               onClick={close}
-              className="flex items-center justify-center gap-2 w-full bg-[#FF5C00] hover:bg-white hover:text-[#0A0A0A] text-white font-black text-xs uppercase tracking-[0.15em] py-4 transition-all duration-300"
+              className="flex items-center justify-center gap-2 w-full bg-[#FF5C00] hover:bg-white hover:text-[#0A0A0A] text-white font-black text-xs uppercase tracking-[0.15em] py-4 min-h-[52px] transition-all duration-300"
             >
               Passer commande
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

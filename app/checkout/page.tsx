@@ -245,7 +245,7 @@ export default function CheckoutPage() {
                 {formDone && (
                   <button
                     onClick={() => { setFormDone(false); setStripeReady(false); }}
-                    className="text-[#FF5C00] text-[10px] uppercase tracking-widest hover:underline"
+                    className="text-[#FF5C00] text-[10px] uppercase tracking-widest hover:underline min-h-[44px] px-2 flex items-center"
                   >
                     Modifier
                   </button>
@@ -333,7 +333,7 @@ export default function CheckoutPage() {
                   <button
                     type="submit"
                     disabled={loadingIntent}
-                    className="w-full bg-white text-[#0A0A0A] hover:bg-[#FF5C00] hover:text-white disabled:opacity-40 font-black text-xs uppercase tracking-[0.15em] py-3.5 transition-all duration-300"
+                    className="w-full bg-white text-[#0A0A0A] hover:bg-[#FF5C00] hover:text-white disabled:opacity-40 font-black text-xs uppercase tracking-[0.15em] py-4 min-h-[52px] transition-all duration-300"
                   >
                     {loadingIntent ? 'Chargement…' : 'Continuer vers le paiement →'}
                   </button>

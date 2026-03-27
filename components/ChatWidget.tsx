@@ -49,10 +49,10 @@ export default function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-40 flex flex-col items-start gap-3">
+    <div className="fixed bottom-6 left-6 z-30 flex flex-col items-start gap-3">
       {/* Chat panel */}
       <div
-        className={`flex flex-col bg-[#111111] border border-white/10 w-[360px] shadow-[0_24px_60px_rgba(0,0,0,0.6)] transition-all duration-300 origin-bottom-left ${
+        className={`flex flex-col bg-[#111111] border border-white/10 w-[360px] max-w-[calc(100vw-3rem)] shadow-[0_24px_60px_rgba(0,0,0,0.6)] transition-all duration-300 origin-bottom-left ${
           open
             ? 'opacity-100 scale-100 pointer-events-auto'
             : 'opacity-0 scale-95 pointer-events-none'
