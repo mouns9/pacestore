@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
-import ScrollReveal from "@/components/ScrollReveal";
 import productsData from "@/data/products.json";
 
 type ProductSpec = {
@@ -104,17 +103,17 @@ export default function HomePage() {
       {/* ── 3. Stats section ─────────────────────────────────────── */}
       <section className="bg-[#111111] border-b border-white/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
+          <div className="fade-up">
             <p className="text-[#FF5C00] text-xs font-bold uppercase tracking-[0.3em] text-center mb-3">
               En chiffres
             </p>
             <h2 className="text-center text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mb-14">
               La confiance des coureurs sérieux
             </h2>
-          </ScrollReveal>
+          </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
             {STATS.map((stat, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
+              <div key={i} className={`fade-up-d${(i + 1) as 1 | 2 | 3 | 4}`}>
                 <div className="bg-[#111111] px-8 py-10 text-center hover:bg-[#1A1A1A] transition-colors duration-300 group">
                   <div
                     className="font-black text-white group-hover:text-[#FF5C00] transition-colors duration-300 mb-1"
@@ -125,7 +124,7 @@ export default function HomePage() {
                   <div className="text-sm font-bold text-white/70 uppercase tracking-widest mt-2">{stat.label}</div>
                   <div className="text-xs text-white/25 mt-1">{stat.sub}</div>
                 </div>
-              </ScrollReveal>
+              </div>
             ))}
           </div>
         </div>
@@ -135,7 +134,7 @@ export default function HomePage() {
       <section id="catalogue" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
 
         {/* Section header */}
-        <ScrollReveal>
+        <div className="fade-up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div>
               <p className="text-[#FF5C00] text-xs font-bold uppercase tracking-[0.3em] mb-3">
@@ -152,10 +151,10 @@ export default function HomePage() {
               Drop, stack, amorti, plaque — rien n&apos;est laissé au hasard.
             </p>
           </div>
-        </ScrollReveal>
+        </div>
 
         {/* Quick filters */}
-        <ScrollReveal delay={100}>
+        <div className="fade-up-d1">
           <div className="flex items-center gap-3 mb-10 overflow-x-auto pb-2">
             {["Tout", "Trail", "Compétition", "GPS"].map((filter) => (
               <button
@@ -173,14 +172,12 @@ export default function HomePage() {
               {products.length} produits
             </div>
           </div>
-        </ScrollReveal>
+        </div>
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {products.map((product, i) => (
-            <ScrollReveal key={product.id} delay={i * 100}>
-              <ProductCard product={product} />
-            </ScrollReveal>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 fade-up-d2">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
@@ -190,7 +187,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8">
             {FEATURES.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 100}>
+              <div key={item.title} className={i === 0 ? 'fade-up' : i === 1 ? 'fade-up-d1' : 'fade-up-d2'}>
                 <div className="flex flex-col items-center sm:items-start gap-4 group">
                   <div className="text-[#FF5C00] group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
@@ -202,7 +199,7 @@ export default function HomePage() {
                     {item.body}
                   </p>
                 </div>
-              </ScrollReveal>
+              </div>
             ))}
           </div>
         </div>
@@ -216,7 +213,7 @@ export default function HomePage() {
             backgroundSize: "48px 48px",
           }}
         />
-        <ScrollReveal className="relative z-10 max-w-4xl mx-auto">
+        <div className="fade-up relative z-10 max-w-4xl mx-auto">
           <p className="text-[#FF5C00] text-xs font-bold uppercase tracking-[0.3em] mb-6">Notre philosophie</p>
           <blockquote
             className="font-black uppercase leading-[0.9] tracking-tight text-white mb-8"
@@ -235,7 +232,7 @@ export default function HomePage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-        </ScrollReveal>
+        </div>
       </section>
     </>
   );
