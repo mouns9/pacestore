@@ -67,7 +67,7 @@ function CheckoutForm({ customer, orderId, items, grandTotal }: {
           billing_details: {
             name: customer.name,
             email: customer.email,
-            phone: customer.phone,
+            phone: customer.phone || undefined,
             address: { line1: customer.address, city: customer.city, postal_code: customer.zip, country: 'FR' },
           },
         },
@@ -81,7 +81,7 @@ function CheckoutForm({ customer, orderId, items, grandTotal }: {
       return;
     }
 
-    if (paymentIntent?.status === 'succeeded') {
+    if (paymentIntent?.status === 'succeeded' || paymentIntent?.status === 'processing') {
       // Save order to localStorage
       const order = {
         id: orderId,
@@ -116,13 +116,18 @@ function CheckoutForm({ customer, orderId, items, grandTotal }: {
       )}
       <button
         type="submit"
-        disabled={!stripe || processing}
+        disabled={!stripe || !elements || processing}
         className="w-full bg-[#FF5C00] hover:bg-white hover:text-[#0A0A0A] disabled:opacity-40 disabled:cursor-not-allowed text-white font-black text-xs uppercase tracking-[0.15em] py-4 transition-all duration-300 flex items-center justify-center gap-2"
       >
         {processing ? (
           <>
             <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
             Traitement…
+          </>
+        ) : !stripe || !elements ? (
+          <>
+            <span className="w-3.5 h-3.5 border-2 border-white/20 border-t-white/50 rounded-full animate-spin" />
+            Chargement…
           </>
         ) : (
           <>
@@ -159,6 +164,7 @@ export default function CheckoutPage() {
     name: '', email: '', phone: '', address: '', city: '', zip: '',
   });
   const [formDone, setFormDone] = useState(false);
+  const [intentError, setIntentError] = useState('');
 
   // Wait for localStorage hydration before checking empty cart
   useEffect(() => {
@@ -170,6 +176,7 @@ export default function CheckoutPage() {
     if (!customer.name || !customer.email || !customer.address || !customer.city || !customer.zip) return;
 
     setLoadingIntent(true);
+    setIntentError('');
     try {
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
@@ -181,7 +188,11 @@ export default function CheckoutPage() {
         setClientSecret(data.clientSecret);
         setStripeReady(true);
         setFormDone(true);
+      } else {
+        setIntentError('Impossible de préparer le paiement. Veuillez réessayer.');
       }
+    } catch {
+      setIntentError('Erreur réseau. Vérifiez votre connexion et réessayez.');
     } finally {
       setLoadingIntent(false);
     }
@@ -326,6 +337,11 @@ export default function CheckoutPage() {
                   >
                     {loadingIntent ? 'Chargement…' : 'Continuer vers le paiement →'}
                   </button>
+                  {intentError && (
+                    <p className="text-red-400 text-xs border border-red-400/20 bg-red-400/5 px-3 py-2">
+                      {intentError}
+                    </p>
+                  )}
                 </form>
               )}
             </div>

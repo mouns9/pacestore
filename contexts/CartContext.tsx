@@ -87,8 +87,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     localStorage.setItem('pacestore-cart', JSON.stringify(state.items));
-  }, [state.items]);
+  }, [state.items, hydrated]);
 
   const total = state.items.reduce((acc, i) => acc + i.price * i.quantity, 0);
   const count = state.items.reduce((acc, i) => acc + i.quantity, 0);
