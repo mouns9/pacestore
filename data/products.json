@@ -57,6 +57,25 @@
     "inStock": true
   },
   {
+    "id": "brooks-ghost-16",
+    "name": "Brooks Ghost 16",
+    "category": "Route",
+    "price": 159,
+    "currency": "EUR",
+    "badge": "Daily Runner",
+    "description": "La valeur sûre du running quotidien. Amorti DNA LOFT v3 doux et réactif, upper mesh 3D Print pour un maintien précis sans points de pression. Transition fluide talon-avant-pied, polyvalente du jogging matinal au semi-marathon. Drop 12 mm, stack 36/24 mm.",
+    "specs": {
+      "drop": "12 mm",
+      "stack": "36 / 24 mm",
+      "poids": "283 g (H42)",
+      "terrain": "Route, trottoir"
+    },
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
+    "colors": ["Noir/Blanc", "Bleu/Argent", "Gris/Orange"],
+    "sizes": [40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 46, 47],
+    "inStock": true
+  },
+  {
     "id": "on-cloudmonster-2",
     "name": "On Running Cloudmonster 2",
     "category": "Route",

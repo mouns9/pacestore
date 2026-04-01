@@ -67,7 +67,7 @@ export default function Hero() {
         <div className="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#catalogue"
-            className="group flex items-center gap-3 bg-[#FF5C00] hover:bg-white text-white hover:text-[#0A0A0A] font-black text-sm uppercase tracking-[0.2em] px-10 py-4 transition-all duration-300"
+            className="group flex items-center gap-3 bg-red-600 hover:bg-white text-white hover:text-[#0A0A0A] font-black text-sm uppercase tracking-[0.2em] px-10 py-4 transition-all duration-300"
           >
             Voir le catalogue
             <svg
