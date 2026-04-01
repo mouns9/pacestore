@@ -49,7 +49,7 @@ export default function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-30 flex flex-col items-start gap-3">
+    <div className="fixed bottom-6 left-6 z-30 flex flex-col items-start gap-3 pointer-events-none">
       {/* Chat panel */}
       <div
         className={`flex flex-col bg-[#111111] border border-white/10 w-[360px] max-w-[calc(100vw-3rem)] shadow-[0_24px_60px_rgba(0,0,0,0.6)] transition-all duration-300 origin-bottom-left ${
@@ -145,7 +145,7 @@ export default function ChatWidget() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className={`w-14 h-14 rounded-full shadow-[0_8px_32px_rgba(255,92,0,0.4)] flex items-center justify-center transition-all duration-300 ${
+        className={`pointer-events-auto w-14 h-14 rounded-full shadow-[0_8px_32px_rgba(255,92,0,0.4)] flex items-center justify-center transition-all duration-300 ${
           open
             ? 'bg-white text-[#0A0A0A] rotate-0'
             : 'bg-[#FF5C00] text-white hover:scale-110'
