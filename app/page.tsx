@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import ProductCard from "@/components/ProductCard";
+import CatalogueSection from "@/components/CatalogueSection";
 import productsData from "@/data/products.json";
 
 type ProductSpec = {
@@ -153,33 +153,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Quick filters */}
-        <div className="fade-up-d1">
-          <div className="flex items-center gap-3 mb-10 overflow-x-auto pb-2">
-            {["Tout", "Trail", "Compétition", "GPS"].map((filter) => (
-              <button
-                key={filter}
-                className={`flex-shrink-0 text-xs font-bold uppercase tracking-widest px-4 py-2 border transition-all duration-200 ${
-                  filter === "Tout"
-                    ? "bg-[#FF5C00] border-[#FF5C00] text-white"
-                    : "border-white/10 text-white/40 hover:border-[#FF5C00]/50 hover:text-white/70"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-            <div className="ml-auto flex-shrink-0 text-white/20 text-xs uppercase tracking-widest">
-              {products.length} produits
-            </div>
-          </div>
-        </div>
-
-        {/* Product grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 fade-up-d2">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <CatalogueSection products={products} />
       </section>
 
       {/* ── 5. Features strip ────────────────────────────────────── */}

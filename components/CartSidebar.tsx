@@ -22,7 +22,7 @@ export default function CartSidebar() {
       {/* Sidebar panel */}
       <div
         className={`fixed top-0 right-0 h-full w-full max-w-[420px] bg-[#111111] border-l border-white/5 z-50 flex flex-col transition-transform duration-300 ease-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+          isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >
         {/* Header */}
